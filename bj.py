@@ -23,10 +23,10 @@ def calculate_score(cards):
 def compare(my_score, comp_score):
 
     if my_score > 21 and comp_score > 21:
-        return "You went over. You lose 😤"
+        return "BUSTED! You lose 😤"
 
     if my_score == comp_score:
-        return "Draw 🙃"
+        return "PUSH! It's a tie 🙃"
     elif comp_score == 0:
         return "Lose, opponent has Blackjack 😱"
     elif my_score == 0:
@@ -62,8 +62,8 @@ def play_game():
             game_over = True
         else:
             user_should_deal = input(
-                "Type 'yes' to get another card, type 'no' to pass: ").lower()
-            if user_should_deal == "yes":
+                "Type 'hit' to get another card, type 'stand' to pass: ").lower()
+            if user_should_deal == "hit":
                 my_cards.append(deal_card())
             else:
                 game_over = True
